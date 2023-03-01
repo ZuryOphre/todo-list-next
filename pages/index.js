@@ -1,7 +1,15 @@
 import TodoList from '../components/TodoList';
+import Header from '../components/Header';
+import Footer from '../components/footer'
 
-const home = () => {
-  return <TodoList />;
+const Home = () => {
+  return (
+    <div>
+      <Header />
+      <TodoList />
+      <Footer/>
+    </div>
+  );
 };
 
-export default home;
+export default Home;
