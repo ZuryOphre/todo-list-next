@@ -1,5 +1,5 @@
-import TodoList from '../components/TodoList';
-import Header from '../components/Header';
+import TodoList from '../components/todoList';
+import Header from '../components/header';
 import Footer from '../components/footer'
 
 const Home = () => {
