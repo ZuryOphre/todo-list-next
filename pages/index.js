@@ -1,4 +1,4 @@
-import TodoList from '../components/todoList';
+import TodoList from '../components/todolist';
 import Header from '../components/header';
 import Footer from '../components/footer'
 
