@@ -6,4 +6,4 @@ This application is a good example of how to create a simple full-stack applicat
 
 Can you try the application that is deployed on Vercel
 
-![ScreenShot](todolistimage/Captura de pantalla 2023-03-01 012722.png)
+![ScreenShot](todolistimage/screenshot.png)
