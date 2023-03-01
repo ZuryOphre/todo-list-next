@@ -36,31 +36,56 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button onClick={addTask}>Add</button>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={(e) => updateTask(task.id, e.target.checked)}
-            />
+  <div className="flex flex-col justify-center items-center bg-gray-900 h-screen">
+    <input
+      type="text"
+      value={description}
+      onChange={(e) => setDescription(e.target.value)}
+      className="w-80 h-10 px-3 rounded-lg border-2 border-purple-500 bg-gray-900 text-purple-500 placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+      placeholder="What's on your mind?"
+    />
+    <button
+      onClick={addTask}
+      className="px-4 py-2 mt-4 rounded-lg bg-purple-500 hover:bg-purple-600 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+    >
+      Add
+    </button>
+    <ul className="mt-6 space-y-4">
+      {tasks.map((task) => (
+        <li key={task.id} className="flex items-center space-x-4">
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={(e) => updateTask(task.id, e.target.checked)}
+            className="h-6 w-6 rounded-lg border-2 border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <span
+            className={`flex-1 ${
+              task.completed ? 'line-through text-gray-400' : 'text-purple-500'
+            }`}
+          >
             {task.description}
-            <button onClick={() => editTask(task.id, prompt('Enter new description:', task.description))}>
-              Edit
-            </button>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+          </span>
+          <button
+            onClick={() =>
+              editTask(task.id, prompt('Enter new description:', task.description))
+            }
+            className="px-3 py-2 rounded-lg bg-purple-500 hover:bg-purple-600 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => deleteTask(task.id)}
+            className="px-3 py-2 rounded-lg bg-purple-500 hover:bg-purple-600 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+          >
+            Delete
+          </button>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 };
 
 export default TodoList;
